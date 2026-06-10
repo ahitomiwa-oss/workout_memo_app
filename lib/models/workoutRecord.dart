@@ -1,13 +1,14 @@
 class WorkoutRecord {
   WorkoutRecord({
     this.id,
+    //requiredは必ず値を渡す
     required this.exercise,
     required this.weight,
     required this.reps,
     required this.sets,
     required this.date,
   });
-
+  //?がついているとnullでもOK ?がついていないとクラッシュする
   final int? id;
   final String exercise;
   final double weight;
@@ -15,7 +16,7 @@ class WorkoutRecord {
   final int sets;
   final DateTime date;
 
-
+//dynamic型はどんな型でもOK
 Map<String, dynamic> toMap(){
   return{
     'id' : id,
@@ -23,9 +24,12 @@ Map<String, dynamic> toMap(){
     'weight': weight,
     'reps': reps,
     'sets': sets,
-    'date': date.toIso8601String(),
+    'date': date.toIso8601String(), //date型をStringに変換するメソッド
   };
 }
+
+//mapからWorkoutRecordを作るために必要
+//toMapとfromMapはセット
   factory WorkoutRecord.fromMap(Map<String, dynamic> map) {
     return WorkoutRecord(
       id: map['id'] as int?,
