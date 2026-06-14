@@ -1,4 +1,4 @@
-import 'package:kintoreapp/models/workoutSet.dart';
+import 'package:kintoreapp/models/workout_set.dart';
 
 class WorkoutRecord {
   WorkoutRecord({
@@ -25,7 +25,7 @@ Map<String, dynamic> toMap(){
 
 //mapからWorkoutRecordを作るために必要
 //toMapとfromMapはセット
-  factory WorkoutRecord.fromMap(Map<String, dynamic> map, List<WorkoutSet> set) {
+  factory WorkoutRecord.fromMap(Map<String, dynamic> map, List<WorkoutSet> sets) {
     return WorkoutRecord(
       id: map['id'] as int?,
       exerciseId: map['exerciseId'] as int,

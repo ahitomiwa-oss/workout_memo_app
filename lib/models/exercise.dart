@@ -13,6 +13,7 @@ class Exercise {
       'name': name,
     };
   }
+  
   factory Exercise.fromMap(Map<String, dynamic> map){
     return Exercise(
       id: map['id'] as int?,
