@@ -58,6 +58,22 @@ class DatabaseHelper {
       )
     ''');
     //AUTOINCREMENTでデータを保存するたびに1,2,3と増える
+     // デフォルト種目を追加
+    final defaultExercises = [
+      'ベンチプレス',
+      'スクワット',
+      'デッドリフト',
+      'ショルダープレス',
+      'ラットプルダウン',
+      'ベントオーバーロウ',
+      'ダンベルカール',
+      'トライセプスエクステンション',
+      ''
+    ];
+
+    for (final name in defaultExercises) {
+      await db.insert('exercises', {'name': name});
+    }
   }
   //種目の追加
   Future<Exercise> createExercise(Exercise exercise) async {
